@@ -24,19 +24,21 @@ CDK_HEAD = /scratch/perkins/include
 
 # Filenames
  # Source
-SRCS = program6.cc \
-       binaryIO.cc
+SRC = program6.cc \
+       binaryIO.cc       
+SRC_DIR = ./src/
+INC_DIR = ./include/
+IN_DIR = ./input/
+SRCS=$(SRC:%=$(SRC_DIR)%)
 
 # Executables
 EXE = program6
- # Input and Output
-INPUTFILE = cs3377.bin
 
 # Compilers and Flags
 
 CXX = g++
 CXXFLAGS = -Wall -g -std=c++11 
-CPPFLAGS = -Wall -I./include/ -I$(CDK_HEAD) -std=c++11
+CPPFLAGS = -Wall -I$(INC_DIR) -I$(CDK_HEAD) -std=c++11
 LDFLAGS = -L$(CDK_LIB)
 LDLIBS = -lcdk -lcurses
 
@@ -51,7 +53,7 @@ $(EXE): $(OBJS)
 
  # make clean
 clean: 
-	rm -f *.o $(EXE) *.d*
+	rm -f $(SRC_DIR)*.o $(EXE) $(SRC_DIR)*.d
 
  # make test
 #test:
