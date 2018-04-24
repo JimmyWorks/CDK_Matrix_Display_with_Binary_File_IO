@@ -25,6 +25,7 @@ CDK_HEAD = /scratch/perkins/include
 # Filenames
  # Source
 SRCS = program6.cc \
+       binaryIO.cc
 
 # Executables
 EXE = program6
@@ -35,7 +36,7 @@ INPUTFILE = cs3377.bin
 
 CXX = g++
 CXXFLAGS = -Wall -g -std=c++11 
-CPPFLAGS = -Wall -I/include/ -I$(CDK_HEAD) -std=c++11
+CPPFLAGS = -Wall -I./include/ -I$(CDK_HEAD) -std=c++11
 LDFLAGS = -L$(CDK_LIB)
 LDLIBS = -lcdk -lcurses
 
