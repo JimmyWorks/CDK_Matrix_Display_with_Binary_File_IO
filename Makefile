@@ -25,10 +25,12 @@ CDK_HEAD = /scratch/perkins/include
 # Filenames
  # Source
 SRC = program6.cc \
-       binaryIO.cc       
+       binaryIO.cc
+ # Directories
 SRC_DIR = ./src/
 INC_DIR = ./include/
-IN_DIR = ./input/
+
+ # Source with path
 SRCS=$(SRC:%=$(SRC_DIR)%)
 
 # Executables
@@ -54,9 +56,6 @@ $(EXE): $(OBJS)
  # make clean
 clean: 
 	rm -f $(SRC_DIR)*.o $(EXE) $(SRC_DIR)*.d
-
- # make test
-#test:
 
 Makefile: $(SRCS:.c=.d)
 
